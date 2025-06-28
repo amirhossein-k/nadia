@@ -33,7 +33,7 @@ const ClientComponent = () => {
         // gsap.to('.swiper-slide-active .small', { y: '-100',x:"500", opacity: 1, delay: 2.1 });
           gsap.to('.swiper-slide-active .image', {
           y: '0',
-          x:"-60",
+          x:"-20",
           opacity: 1,
           delay: 2.1,
           stagger: 0.2,
@@ -59,24 +59,30 @@ const ClientComponent = () => {
           delay: 2.1,
           stagger: 0.2,
         });
+           gsap.from('.swiper-slide-active .big span.after', {
+          y: '150',
+          opacity: 0,
+          delay: 2.1,
+          stagger: 0.2,
+        });
          gsap.to('.swiper-slide-active .big span.after', {
           y:"00",
-          x:'-20',
+          x:'20',
           opacity: 1,
           delay: 2.1,
           stagger: 0.2,
         });
-  
+
      
         gsap.from('.swiper-slide-active .big span.before', {
-          y: '100',
+          y: '150',
           opacity: 0,
           delay: 2.1,
           stagger: 0.2,
         });
                gsap.to('.swiper-slide-active .big span.before', {
           y: '0',
-          x:"-50",
+          x:"-30",
           opacity: 1,
           delay: 2.1,
           stagger: 0.2,
@@ -111,15 +117,15 @@ const ClientComponent = () => {
         className="mySwiper w-full h-screen"
       >
         <SwiperSlide className="w-full h-full  relative">
-          <div className="yellow  bg-yellow-500"></div>
+          <div className="yellow  bg-pink-400"></div>
           <div className="black bg-black"></div>
           <div className="content ">
             <div className="title ">
-            <div className="small text-3xl   w-full flex justify-end text-white">طراح لباس </div>
-              <div className="big md:text-[200px] lg:text-[280px] text-[150px] md:top-0 top-[50px] text-white">
+            <div className="small  md:text-3xl  text-[17px]  w-full flex justify-end text-white">طراح لباس </div>
+              <div className="big md:text-[200px] lg:text-[280px] text-[80px] md:top-0 top-[50px] text-white">
                 <span className='before'>N</span>
                 <span className='before'>A</span>
-                <span className='after'>D</span>
+                <span className='after  '>D</span>
                 <span className='after'>I</span>
                 <span className='after'>A</span>
               </div>
@@ -137,10 +143,10 @@ const ClientComponent = () => {
                 // style={{ objectFit: 'contain' }}
               />
             </div>
-            <div className="absolute bot right-0 bottom-32 p-2 gap-4 text-[#fffcef]  justify-center text-xl flex items-center w-full">
+            <div className="absolute bot right-0 bottom-28 p-2 gap-6 text-[#fffcef]  justify-center md:text-xl text-[17px] flex items-center w-full">
               <span>
                 <b className="font-bold z-20">اماده ای برای اغاز خلق یک اثر منحصر به فرد؟</b> 
-              <div className=" z-20 text-5xl -rotate-90  w-fit arrow text-white cursor-pointer" onClick={handleArrowClick}  >  <PiArrowBendDoubleUpLeftBold />
+              <div className=" z-20 text-5xl -rotate-90   w-fit arrow text-white cursor-pointer" onClick={handleArrowClick}  >  <PiArrowBendDoubleUpLeftBold />
 </div>
               </span>
             </div>
@@ -177,7 +183,7 @@ const ClientComponent = () => {
             </div>
           </div>
         </SwiperSlide>
-        <div className="swiper-pagination"></div>
+        {/* <div className="swiper-pagination"></div> */}
       </Swiper>
     </div>
   );
