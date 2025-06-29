@@ -94,8 +94,8 @@ const ClientComponent = () => {
          gsap.from(".swiper-slide-active .y", { y: "-1000", duration: 2 });
          gsap.from(".swiper-slide-active .y2", { y: "-1100", duration: 3 });
          gsap.to(".swiper-slide-active .y2", { y: "230", duration: 4 });
-         gsap.from(".swiper-slide-active .y3", { y: "-1100", duration: 4.4 });
-         gsap.to(".swiper-slide-active .y3", { y: "450", duration: 6.0 });
+         gsap.from(".swiper-slide-active .y3", { y: "-800", duration: 4.8 });
+         gsap.to(".swiper-slide-active .y3", { y: "550", duration: 6.0 });
 
 
         gsap.from(".swiper-slide-active .content .title_number", {
@@ -115,8 +115,8 @@ const ClientComponent = () => {
           ease: "circ",
         });
         gsap.to(".swiper-slide-active .content .title", {
-          y: "-90",
-          x: "-190",
+          y: "140",
+          x: "-90",
           opacity: 1,
           delay: 2,
           // stagger:0.5,
@@ -295,10 +295,10 @@ const ClientComponent = () => {
           </div>
         </SwiperSlide>
         {/* اسلاید دوم برای تست */}
-        <SwiperSlide className="w-full h-full relative">
+        <SwiperSlide className="w-full h-full relative ">
           <div className="y  bg-pink-500 absolute left-0 h-[35%] right-0-0 w-[44%] z-10"></div>
           <div className="y2  bg-pink-500 absolute left-0 h-[35%] right-0-0 w-[44%] z-10"></div>
-          <div className="y3  bg-pink-500 absolute left-0 h-[35%] right-0-0 w-[44%] z-10"></div>
+          <div className="y3  bg-pink-500 absolute left-0 h-[45%] right-0-0 w-[44%] z-10"></div>
 
           <div className="black  bg-black w-[56%]"></div>
 
@@ -308,12 +308,12 @@ const ClientComponent = () => {
                 <Bs1Circle />
               </div>
               <div
-                className="title sm:text-2xl text-[20px] right-[30px] absolute top-[240px]  w-[150px] sm:w-full flex z-50  h-fit "
+                className="title sm:text-2xl lg:text-4xl text-[20px] justify-end  left-[10px] md:right-[160px] md:left-auto  xl:right-[60px] bsolute top-[240px] sm:top-[320px]  w-[150px] sm:w-[65%] md:w-[72%] lg:w-[80%]  flex z-50  h-fit "
                 dir="rtl"
               >
                 اول اندازه هایت را دقیق یادداشت میکنم
               </div>
-              <div className="image2 flex z-50 absolute top-[50px] sm:right-[100px] right-[50px] sm:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden ">
+              <div className="image2 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[300px] xl:w-[350px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden ">
                 <Image
                   alt="تصویر دوم"
                   src="https://c713657.parspack.net/c713657/uploads/pngwing.com%20%2839%29.png"
@@ -339,12 +339,12 @@ const ClientComponent = () => {
                 <Bs2Circle />
               </div>
                <div
-                className="title sm:text-2xl text-[20px] -left-[14px] absolute top-[150px]  w-[150px] sm:w-full flex   h-fit "
+                className="title sm:text-2xl lg:text-4xl text-[20px]    left-[10px] md:right-[160px] md:left-auto  xl:right-[60px] absolute top-[150px] sm:top-[260px] justify-end   w-[150px] sm:w-[65%] md:w-[72%] lg:w-[80%]  flex   z-50 h-fit "
                 dir="rtl"
               >
                 الگو میکشم برای لباس خوشگلت
               </div>
-              <div className="image2 flex absolute top-[50px] sm:right-[100px] right-[60px] sm:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden ">
+              <div className="image3 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[250px] lg:w-[300px] xl:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
                 <Image
                   alt="تصویر دوم"
                   src="https://c713657.parspack.net/c713657/uploads/sqq.png"
@@ -357,17 +357,17 @@ const ClientComponent = () => {
               </div>
             </div>
             {/*  */}
-            <div className="content3 relative  z-50 w-full  flex justify-center items-center h-[35%] text-white ">
+            <div className="content3 relative  w-full z-50  flex justify-center items-center h-[35%] text-white  ">
               <div className="title_number font-bold z-50 text-[#fffcef] text-[40px] absolute top-[15px] sm:right-[100px] right-[40px]">
                 <Bs3Circle />
               </div>
                <div
-                className="title sm:text-2xl text-[20px] left-[10px] absolute top-[110px]  w-[150px] sm:w-full flex   h-fit "
+                className=" title sm:text-2xl lg:text-4xl text-[20px] left-[10px] md:right-[160px] md:left-auto  xl:right-[60px]   absolute top-[110px] sm:top-[180px] justify-end   w-[150px] sm:w-[65%] md:w-[75%] lg:w-[80%]  flex   z-50 h-fit "
                 dir="rtl"
               >
                 پارچه منحصر به فرد خودتو برش میدم
               </div>
-              <div className="image3 flex absolute top-[40px] sm:right-[100px] right-[40px] sm:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden ">
+              <div className="image3  flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[300px] xl:w-[350px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
                 <Image
                   alt="تصویر دوم"
                   src="https://c713657.parspack.net/c713657/uploads/sciq.png"
