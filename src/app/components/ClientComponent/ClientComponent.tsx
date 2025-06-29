@@ -95,7 +95,7 @@ const ClientComponent = () => {
          gsap.from(".swiper-slide-active .y2", { y: "-1100", duration: 3 });
          gsap.to(".swiper-slide-active .y2", { y: "230", duration: 4 });
          gsap.from(".swiper-slide-active .y3", { y: "-800", duration: 4.8 });
-         gsap.to(".swiper-slide-active .y3", { y: "550", duration: 6.0 });
+         gsap.to(".swiper-slide-active .y3", { y: "530", duration: 6.0 });
 
 
         gsap.from(".swiper-slide-active .content .title_number", {
@@ -344,7 +344,7 @@ const ClientComponent = () => {
               >
                 الگو میکشم برای لباس خوشگلت
               </div>
-              <div className="image3 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[250px] lg:w-[300px] xl:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
+              <div className="image2 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[250px] lg:w-[300px] xl:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
                 <Image
                   alt="تصویر دوم"
                   src="https://c713657.parspack.net/c713657/uploads/sqq.png"
