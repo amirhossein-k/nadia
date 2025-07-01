@@ -1,5 +1,6 @@
 
   // انیمیشن‌های اسلاید اول
+  import { gsap } from 'gsap';
  export const animateSlide1 = () => {
     gsap.from('.swiper-slide-active .yellow', { y: '-1000', duration: 2 });
     gsap.from('.swiper-slide-active .image', { x: '-1000', duration: 2 });
