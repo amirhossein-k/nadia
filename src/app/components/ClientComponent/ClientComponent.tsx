@@ -1,8 +1,6 @@
 // src/app/components/ClientComponent/ClientComponent.tsx
 "use client";
-import { PiArrowBendDoubleUpLeftBold } from "react-icons/pi";
 
-import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel } from "swiper/modules";
 import "swiper/css";
@@ -10,7 +8,10 @@ import "swiper/css/pagination";
 import { useLayoutEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { SwiperRef } from "swiper/react";
-import { Bs1Circle, Bs2Circle, Bs3Circle } from "react-icons/bs";
+import Slide1 from "../Slides/Slide1/Slide1";
+import Slide2 from "../Slides/Slide2/Slide2";
+import Slide3 from "../Slides/Slide3/Slide3";
+import { animateSlide1, animateSlide2, animateSlide3 } from "@/features/StyleGsap";
 
 const ClientComponent = () => {
   const [active, setActive] = useState<number>(0);
@@ -24,278 +25,12 @@ const ClientComponent = () => {
     }
   };
 
-  useLayoutEffect(() => {
+    useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      if (active === 0) {
-        gsap.from(".swiper-slide-active .yellow", { y: "-1000", duration: 2 });
-        gsap.from(".swiper-slide-active .image", { x: "-1000", duration: 2 });
-        gsap.from(".swiper-slide-active .small", {
-          y: "-100",
-          opacity: 0,
-          delay: 2.1,
-        });
-        // gsap.to('.swiper-slide-active .small', { y: '-100',x:"500", opacity: 1, delay: 2.1 });
-        gsap.to(".swiper-slide-active .image", {
-          y: "0",
-          x: "-20",
-          opacity: 1,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-        gsap.from(".swiper-slide-active .arrow", {
-          y: "100",
-          opacity: 0,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-        gsap.to(".swiper-slide-active .arrow", {
-          fill: "#ff0000", // تغییر به قرمز
-          duration: 1,
-          color: "#ff0000",
-          yoyo: true,
-          repeat: -1, // تکرار بی‌نهایت
-          delay: 2.1,
-        });
-        gsap.from(".swiper-slide-active .bot", {
-          y: "100",
-          opacity: 0,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-        gsap.from(".swiper-slide-active .big span.after", {
-          y: "150",
-          opacity: 0,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-        gsap.to(".swiper-slide-active .big span.after", {
-          y: "00",
-          x: "20",
-          opacity: 1,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-
-        gsap.from(".swiper-slide-active .big span.before", {
-          y: "150",
-          opacity: 0,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-        gsap.to(".swiper-slide-active .big span.before", {
-          y: "0",
-          x: "-30",
-          opacity: 1,
-          delay: 2.1,
-          stagger: 0.2,
-        });
-      } else if (active === 1) {
-        // slide 2
-         gsap.from(".swiper-slide-active .y", { y: "-1000", duration: 2 });
-         gsap.from(".swiper-slide-active .y2", { y: "-1100", duration: 3 });
-         gsap.to(".swiper-slide-active .y2", { y: "230", duration: 4 });
-         gsap.from(".swiper-slide-active .y3", { y: "-800", duration: 4.8 });
-         gsap.to(".swiper-slide-active .y3", { y: "530", duration: 6.0 });
-
-
-        gsap.from(".swiper-slide-active .content .title_number", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 1,
-          stagger: 0.2,
-          ease: "circ",
-        });
-        gsap.from(".swiper-slide-active .content .title", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 2,
-          // stagger:0.5,
-          ease: "circ",
-        });
-        gsap.to(".swiper-slide-active .content .title", {
-          y: "140",
-          x: "-90",
-          opacity: 1,
-          delay: 2,
-          // stagger:0.5,
-          ease: "circ",
-        });
-        gsap.from(".swiper-slide-active .content .image2", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 2,
-          // stagger:0.2,
-          ease: "elastic.out",
-        });
-            gsap.from('.swiper-slide-active .content2 .title',{
-          y:"100",
-          x:"0",
-          opacity:0,
-          delay:2.5,
-          stagger:0.2,
-          ease:'circ',
-
-        })
-          gsap.to('.swiper-slide-active .content2 .title',{
-          y:"0",
-          x:"0",
-          opacity:1,
-          delay:3.6,
-          stagger:0.2,
-          ease:'circ'
-
-        })
-            gsap.from('.swiper-slide-active .content2 .image2',{
-          y:"0",
-          x:"100",
-          opacity:0,
-          delay:3,
-          stagger:0.2,
-          ease:'circ',
-
-        })
-          gsap.to('.swiper-slide-active .content2 .image2',{
-          y:"0",
-          x:"0",
-          opacity:1,
-          delay:3.2,
-          stagger:0.2,
-          ease:'circ'
-
-        })
-            gsap.from(".swiper-slide-active .content2 .title_number", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 2.5,
-          stagger: 0.2,
-          ease: "circ",
-        });
-        // 
-         gsap.from('.swiper-slide-active .content3 .title',{
-          y:"100",
-          x:"0",
-          opacity:0,
-          delay:3.5,
-          stagger:0.2,
-          ease:'circ',
-
-        })
-          gsap.to('.swiper-slide-active .content3 .title',{
-          y:"0",
-          x:"0",
-          opacity:1,
-          delay:4.6,
-          stagger:0.2,
-          ease:'circ'
-
-        })
-            gsap.from('.swiper-slide-active .content3 .image3',{
-          y:"0",
-          x:"100",
-          opacity:0,
-          delay:4,
-          stagger:0.2,
-          ease:'circ',
-
-        })
-          gsap.to('.swiper-slide-active .content3 .image3',{
-          y:"0",
-          x:"0",
-          opacity:1,
-          delay:4.2,
-          stagger:0.2,
-          ease:'circ'
-
-        })
-            gsap.from(".swiper-slide-active .content3 .title_number", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 3.5,
-          stagger: 0.2,
-          ease: "circ",
-        });
-      } else if (active === 2) {
- 
-        gsap.from(".swiper-slide-active .content3 .title .sub", {
-          y: "100",
-          x: "0",
-          opacity: 0,
-          delay: 2,
-          stagger:0.5,
-          ease: "circ",
-        });
-        gsap.from(".swiper-slide-active .content3 .title  .one", {
-          y: "0",
-          x: "0",
-          opacity: 0,
-          delay: 2.2,
-          stagger:0.5,
-          ease: "circ",
-        });
-          gsap.from(".swiper-slide-active .content3 .title  .one_one", {
-          y: "0",
-          x: "0",
-          opacity: 0,
-          delay: 2.4,
-          stagger:0.5,
-          ease: "circ",
-        });
-          gsap.from(".swiper-slide-active .content3 .title  .two", {
-          y: "0",
-          x: "0",
-          opacity: 0,
-          delay: 2.6,
-          stagger:0.5,
-          ease: "circ",
-        });
-          gsap.from(".swiper-slide-active .content3 .title  .two_two", {
-          y: "0",
-          x: "0",
-          opacity: 0,
-          delay: 3,
-          stagger:0.5,
-          ease: "circ",
-        });
-            gsap.from(".swiper-slide-active .content3 .title  .three", {
-          y: "0",
-          x: "0",
-          opacity: 0,
-          delay: 3.4,
-          stagger:0.5,
-          ease: "circ",
-        });
-        //  gsap.from(".swiper-slide-active .content3 .title .sub", {
-        //   y: "100",
-        //   x: "0",
-        //   opacity: 0,
-        //   delay: 2,
-        //   stagger:0.5,
-        //   ease: "circ",
-        // });
-        // gsap.to(".swiper-slide-active .content3 .title .sub", {
-        //   y: "140",
-        //   x: "-90",
-        //   opacity: 1,
-        //   delay: 2,
-        //   stagger:0.5,
-        //   ease: "circ",
-        // });
-    
-        // gsap.to(".swiper-slide-active .content3.title .sub one", {
-        //   y: "140",
-        //   x: "-90",
-        //   opacity: 1,
-        //   delay: 2,
-        //   stagger:0.5,
-        //   ease: "circ",
-        // });
-      }
-    }, swiperContainer); // استفاده از ref برای المنت DOM
+      if (active === 0) animateSlide1();
+      else if (active === 1) animateSlide2();
+      else if (active === 2) animateSlide3();
+    }, swiperContainer);
     return () => ctx.revert();
   }, [active]);
 
@@ -324,180 +59,14 @@ const ClientComponent = () => {
         modules={[Pagination, Mousewheel]}
         className="mySwiper w-full h-screen"
       >
-        <SwiperSlide className="w-full h-full  relative">
-          <div className="yellow  bg-pink-400"></div>
-          <div className="black bg-black  w-[56%]" ></div>
-          <div className="content w-full h-full ">
-            <div className="title  absolute pb-[170px]">
-              <div className="small  md:text-3xl  text-[17px]  w-full flex justify-end text-white">
-                طراح لباس{" "}
-              </div>
-              <div className="big md:text-[200px] lg:text-[280px] text-[80px] md:top-0 top-[50px] text-white">
-                <span className="before">N</span>
-                <span className="before">A</span>
-                <span className="after  ">D</span>
-                <span className="after">I</span>
-                <span className="after">A</span>
-              </div>
-            </div>
-            <div className="image relative w-full h-96 md:h-1/2 lg:h-2/3 scale-125">
-              <Image
-                alt="تصویر"
-                src="https://c713657.parspack.net/c713657/uploads/icone_main2.png"
-                quality={100}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "contain" }}
-                onError={() => console.error("Failed to load image")}
-                // sizes="100vw"
-                // style={{ objectFit: 'contain' }}
-              />
-            </div>
-            <div className="absolute bot right-0 bottom-28 p-2 gap-6 text-[#fffcef]  justify-center md:text-xl text-[17px] flex items-center w-full">
-              <span>
-                <b className="font-bold z-20">
-                  اماده ای برای اغاز خلق یک اثر منحصر به فرد؟
-                </b>
-                <div
-                  className=" z-20 text-5xl -rotate-90   w-fit arrow text-white cursor-pointer"
-                  onClick={handleArrowClick}
-                >
-                  {" "}
-                  <PiArrowBendDoubleUpLeftBold />
-                </div>
-              </span>
-            </div>
-          </div>
+        <SwiperSlide>
+          <Slide1 handleArrowClick={handleArrowClick} />
         </SwiperSlide>
-        {/* اسلاید دوم برای تست */}
-        <SwiperSlide className="w-full h-full relative ">
-          <div className="y  bg-pink-500 absolute left-0 h-[35%] right-0-0 w-[44%] z-10"></div>
-          <div className="y2  bg-pink-500 absolute left-0 h-[35%] right-0-0 w-[44%] z-10"></div>
-          <div className="y3  bg-pink-500 absolute left-0 h-[45%] right-0-0 w-[44%] z-10"></div>
-
-          <div className="black  bg-black w-[56%]"></div>
-
-          <div className="container_content h-full w-full gap-2 flex-col z-50 ">
-            <div className="content  relative flex-1 h-[35%]">
-              <div className="title_number font-bold z-50 text-[#fffcef] text-[40px] absolute top-[20px] sm:right-[100px] right-[40px]">
-                <Bs1Circle />
-              </div>
-              <div
-                className="title sm:text-2xl lg:text-4xl text-[20px] justify-end  left-[10px] md:right-[160px] md:left-auto  xl:right-[60px] bsolute top-[240px] sm:top-[320px]  w-[150px] sm:w-[65%] md:w-[72%] lg:w-[80%]  flex z-50  h-fit "
-                dir="rtl"
-              >
-                اول اندازه هایت را دقیق یادداشت میکنم
-              </div>
-              <div className="image2 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[300px] xl:w-[350px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden ">
-                <Image
-                  alt="تصویر دوم"
-                  src="https://c713657.parspack.net/c713657/uploads/pngwing.com%20%2839%29.png"
-                  quality={100}
-                  fill
-                  className="  w-full h-fit"
-                  // sizes="100px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-              {/* <div className="absolute bottom-10 p-2 gap-4 text-[#fffcef] justify-center text-xl flex items-center w-full">
-                <span>
-                  <b className="font-bold z-20">
-                    <Bs1Circle />
-                  </b>
-                </span>
-              </div> */}
-            </div>
-            {/*  */}
-            <div className="content2 relative z-50  w-full  flex justify-center items-center h-[35%] text-white ">
-              
-              <div className="title_number font-bold z-50 text-[#fffcef] text-[40px] absolute top-[15px] sm:right-[100px] right-[40px]">
-                <Bs2Circle />
-              </div>
-               <div
-                className="title sm:text-2xl lg:text-4xl text-[20px]    left-[10px] md:right-[160px] md:left-auto  xl:right-[60px] absolute top-[150px] sm:top-[260px] justify-end   w-[150px] sm:w-[65%] md:w-[72%] lg:w-[80%]  flex   z-50 h-fit "
-                dir="rtl"
-              >
-                الگو میکشم برای لباس خوشگلت
-              </div>
-              <div className="image2 flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[250px] lg:w-[300px] xl:w-[300px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
-                <Image
-                  alt="تصویر دوم"
-                  src="https://c713657.parspack.net/c713657/uploads/sqq.png"
-                  quality={100}
-                  fill
-                  className="  w-full h-fit"
-                  // sizes="100px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            </div>
-            {/*  */}
-            <div className="content3 relative  w-full z-50  flex justify-center items-center h-[35%] text-white  ">
-              <div className="title_number font-bold z-50 text-[#fffcef] text-[40px] absolute top-[15px] sm:right-[100px] right-[40px]">
-                <Bs3Circle />
-              </div>
-               <div
-                className=" title sm:text-2xl lg:text-4xl text-[20px] left-[10px] md:right-[160px] md:left-auto  xl:right-[60px]   absolute top-[110px] sm:top-[180px] justify-end   w-[150px] sm:w-[65%] md:w-[75%] lg:w-[80%]  flex   z-50 h-fit "
-                dir="rtl"
-              >
-                پارچه منحصر به فرد خودتو برش میدم
-              </div>
-              <div className="image3  flex z-50 absolute top-[50px] sm:top-[30px]  sm:right-[100px] md:right-[180px] lg:right-[250px] right-[50px] sm:w-[250px] md:w-[300px] xl:w-[350px] w-[200px] h-[100px] sm:h-[300px]  rounded-2xl overflow-hidden  ">
-                <Image
-                  alt="تصویر دوم"
-                  src="https://c713657.parspack.net/c713657/uploads/sciq.png"
-                  quality={100}
-                  fill
-                  className="  w-full h-fit scale-125"
-                  // sizes="100px"
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            </div>
-          </div>
+        <SwiperSlide>
+          <Slide2 />
         </SwiperSlide>
-         <SwiperSlide className="w-full h-full  relative">
-          <div className="yellow  bg-pink-400"></div>
-          <div className="black bg-black  w-[56%]" ></div>
-          <div className="content3 w-full h-full flex flex-col relative">
-            {/*  */}
-            <div className="title relative flex  w-full h-full">
-              <div className="sub  md:text-3xl absolute top-[180px]  text-[25px] right-[40px]  h-fit w-[52%]  flex justify-end text-white" dir="rtl">
-               برای داشتن لباس رویاییت میتونی از طریق راه های ارتباطی زیر با من در ارتباط باشی
-              </div>
-              {/*  */}
-              <div className="bg-red-200 ">
-
-              <div className="one absolute  flex justify-center items-center top-[360px] lg:w-[200px] xl:right-[200px] md:w-[100px] right-[100px]  w-[60px] h-[60px]  md:text-[55px] lg:text-[65px] text-[30px] text-white">
-                <span className="phone "><BiSolidPhone /></span>
-              </div>
-                <span className="one_one absolute flex justify-center items-center top-[360px] md:top-[400px] lg:w-[300px] xl:left-[200px] md:w-[300px] md:left-[200px] lg:left-[100px] left-[100px]  h-[60px]  md:text-[55px] lg:text-[65px] text-[30px]">0933181326</span>
-              </div>
-              {/*  */}
-                <div className="">
-
-              <div className="two absolute  flex justify-center items-center top-[510px] lg:w-[200px] xl:right-[200px] md:w-[100px] right-[100px]  w-[60px] h-[60px]  md:text-[55px] lg:text-[65px] text-[30px] text-white">
-                <span className="phone "><RiTelegramFill />
-</span>
-              </div>
-                <span className="two_two absolute flex justify-center items-center top-[510px] md:top-[550px] lg:w-[300px] xl:left-[200px] md:w-[300px] md:left-[200px] lg:left-[100px] left-[100px]  h-[60px]  md:text-[55px] lg:text-[65px] text-[30px]">
-                  n6dii6</span>
-              </div>
-              <div className=" ">
-
-              <div className=" absolute  flex justify-center items-center top-[610px] lg:w-[200px] xl:right-[200px] md:w-[100px] right-[100px]  w-[60px] h-[60px]  md:text-[55px] lg:text-[65px] text-[30px] text-white">
-              
-
-              </div>
-                <span className="three absolute flex justify-center items-center top-[660px] md:top-[700px] lg:w-[700px] xl:left-[380px] md:w-[600px] md:left-[180px] lg:left-[190px] left-[80px] sm:left-[200px] h-[60px]  md:text-[55px] lg:text-[65px] text-[30px]">
-                  خبرهای خوشی در راه است
-                  </span>
-              </div>
-            </div>
-           {/*  */}
-             
-            {/*  */}
-          </div>
+        <SwiperSlide>
+          <Slide3 />
         </SwiperSlide>
         {/* <div className="swiper-pagination"></div> */}
       </Swiper>
@@ -506,5 +75,3 @@ const ClientComponent = () => {
 };
 
 export default ClientComponent;
-import { BiSolidPhone } from "react-icons/bi";
-import { RiTelegramFill } from "react-icons/ri";
